@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://64.78.172.102/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://64.78.172.102/feed.php">
+        <title>菜菜的百科全书</title>
+        <description></description>
+        <link>http://64.78.172.102/</link>
+        <image rdf:resource="http://64.78.172.102/lib/tpl/arctic/images/favicon.ico" />
+       <dc:date>2014-02-14T11:01:34+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?id=os_management:linux:nmap&amp;rev=1390270331&amp;do=diff"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?id=sidebar&amp;rev=1390182718&amp;do=diff"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?id=os_management:linux&amp;rev=1389248178&amp;do=diff"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?id=os_management:linux:apache_cn_luanma&amp;rev=1389247998&amp;do=diff"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?id=os_management:linux:git&amp;rev=1389155367&amp;do=diff"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?image=funnypic%3Agrowup_browser.jpg&amp;ns=funnypic&amp;rev=1386749495&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?image=funnypic%3Abrower_speed.jpg&amp;ns=funnypic&amp;rev=1386749319&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?image=funnypic%3Agun_browser.jpg&amp;ns=funnypic&amp;rev=1386749180&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://64.78.172.102/doku.php?image=os_management%3Aihwvx1n7qpego.png&amp;ns=os_management&amp;rev=1386748186&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://64.78.172.102/lib/tpl/arctic/images/favicon.ico">
+        <title>菜菜的百科全书</title>
+        <link>http://64.78.172.102/</link>
+        <url>http://64.78.172.102/lib/tpl/arctic/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://64.78.172.102/doku.php?id=os_management:linux:nmap&amp;rev=1390270331&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-01-21T02:12:11+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>给Linux系统/网络管理员准备的Nmap命令的29个实用范例 - 创建</title>
+        <link>http://64.78.172.102/doku.php?id=os_management:linux:nmap&amp;rev=1390270331&amp;do=diff</link>
+        <description>&lt;http://blog.jobbole.com/54595/&gt;</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?id=sidebar&amp;rev=1390182718&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-01-20T01:51:58+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>菜菜技术百科</title>
+        <link>http://64.78.172.102/doku.php?id=sidebar&amp;rev=1390182718&amp;do=diff</link>
+        <description>*  程序编程
+	*  系统管理
+	*  网络安全
+	*  百科应用
+
+	*  图文娱乐
+
+	*  动漫娱乐
+
+	*  菜菜首页
+	*  新浪微博</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?id=os_management:linux&amp;rev=1389248178&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-01-09T06:16:18+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>os_management:linux</title>
+        <link>http://64.78.172.102/doku.php?id=os_management:linux&amp;rev=1389248178&amp;do=diff</link>
+        <description>Linux下使用crontab定时执行脚本
+
+隐藏apache访问错误显示系统和版本信息
+
+linux下常用vim命令
+
+Centos下用yum安装Apache,Mysql,PHP
+
+15分钟学会使用Git和远程代码库
+
+Apache 中文显示乱码问题的解决</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?id=os_management:linux:apache_cn_luanma&amp;rev=1389247998&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-01-09T06:13:18+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>Apache 中文显示乱码问题的解决 - 创建</title>
+        <link>http://64.78.172.102/doku.php?id=os_management:linux:apache_cn_luanma&amp;rev=1389247998&amp;do=diff</link>
+        <description>用Apache 2.2发布一个html网页，访问时发现网页中的中文全部显示乱码。
+
+之前在IIS上发布显示很正常，网页本身编码应该是没问题的。查看源代码确定html文档编码为GB2312。
+
+在/etc/httpd/conf/httpd.conf 文件查找AddDefaultCharset字段，发现默认的配置为： UTF-8
+
+将UTF-8改为： GBK 或者 GB2312 重启httpd服务后，中文显示正常
+
+在网上看到其他人说，将 UTF-8改为GBK/GB2312  确实可以让中文正常显示，但是UTF-8编码的文件又会乱码。 
+
+将AddDefaultCharset 设置为 OFF ，重启httpd服务，就可以按照网页源代码中声明的编码格式显示了。…</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?id=os_management:linux:git&amp;rev=1389155367&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-01-08T04:29:27+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>15分钟学会使用Git和远程代码库 - [别名] </title>
+        <link>http://64.78.172.102/doku.php?id=os_management:linux:git&amp;rev=1389155367&amp;do=diff</link>
+        <description>Git是个了不起但却复杂的源代码管理系统。它能支持复杂的任务，却因此经常被认为太过复杂而不适用于简单的日常工作。
+让我们诚实一记吧：Git是复杂的，我们不要装作它不是。但我仍然会试图教会你用（我的）基本的Git和远程代码库干活的工作步骤，在15分钟内。</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?image=funnypic%3Agrowup_browser.jpg&amp;ns=funnypic&amp;rev=1386749495&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-12-11T08:11:35+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>funnypic:growup_browser.jpg - 创建</title>
+        <link>http://64.78.172.102/doku.php?image=funnypic%3Agrowup_browser.jpg&amp;ns=funnypic&amp;rev=1386749495&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/lib/exe/fetch.php?w=485&amp;h=357t=1386749495&amp;amp;tok=9217ab&amp;amp;media=funnypic:growup_browser.jpg&quot; alt=&quot;funnypic:growup_browser.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?image=funnypic%3Abrower_speed.jpg&amp;ns=funnypic&amp;rev=1386749319&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-12-11T08:08:39+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>funnypic:brower_speed.jpg - 创建</title>
+        <link>http://64.78.172.102/doku.php?image=funnypic%3Abrower_speed.jpg&amp;ns=funnypic&amp;rev=1386749319&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/lib/exe/fetch.php?w=465&amp;h=500t=1386749319&amp;amp;tok=512cc3&amp;amp;media=funnypic:brower_speed.jpg&quot; alt=&quot;funnypic:brower_speed.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?image=funnypic%3Agun_browser.jpg&amp;ns=funnypic&amp;rev=1386749180&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-12-11T08:06:20+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>funnypic:gun_browser.jpg - 创建</title>
+        <link>http://64.78.172.102/doku.php?image=funnypic%3Agun_browser.jpg&amp;ns=funnypic&amp;rev=1386749180&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/lib/exe/fetch.php?w=147&amp;h=499t=1386749180&amp;amp;tok=01f4fe&amp;amp;media=funnypic:gun_browser.jpg&quot; alt=&quot;funnypic:gun_browser.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://64.78.172.102/doku.php?image=os_management%3Aihwvx1n7qpego.png&amp;ns=os_management&amp;rev=1386748186&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-12-11T07:49:46+00:00</dc:date>
+        <dc:creator>caijun</dc:creator>
+        <title>os_management:ihwvx1n7qpego.png - 创建</title>
+        <link>http://64.78.172.102/doku.php?image=os_management%3Aihwvx1n7qpego.png&amp;ns=os_management&amp;rev=1386748186&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/lib/exe/fetch.php?w=392&amp;h=323t=1386748186&amp;amp;tok=ed4023&amp;amp;media=os_management:ihwvx1n7qpego.png&quot; alt=&quot;os_management:ihwvx1n7qpego.png&quot; /&gt;</description>
+    </item>
+</rdf:RDF>

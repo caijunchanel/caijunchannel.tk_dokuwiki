@@ -1,0 +1,124 @@
+
+<h1 class="sectionedit1" id="dl_dt_dd标签">dl、dt、dd标签</h1>
+<div class="level1">
+
+<p>
+dd、dt标签是是列表用的。
+</p>
+
+<p>
+我们平时常用的是&lt;ul&gt;&lt; li&gt;标签，不过dd、dt标签也蛮不错，特别是发布程序的时候功能模块列表什么的可以使用它来排版。
+</p>
+
+<p>
+&lt;dl&gt;&lt;/dl&gt;&lt;dt&gt;&lt; /dt&gt;&lt;dd&gt;&lt; /dd&gt;
+&lt; dl&gt;&lt;/dl&gt;用来创建一个普通的列表,&lt;dt&gt;&lt; /dt&gt;用来创建列表中的上层项目，&lt;dd&gt;&lt;/dd&gt;用来创建列表中最下层项目，&lt;dt&gt;&lt; /dt&gt;和&lt;dd&gt;&lt;/dd&gt;都必须放在&lt;dl&gt;&lt;/dl&gt;标志对之间。看一下下边的例子您就会 明白了：
+</p>
+
+<p>
+创建一个普通列表
+</p>
+<pre class="code">&lt;dl&gt; 
+&lt;dt&gt;中国城市&lt;/dt&gt; 
+&lt;dd&gt;北京 &lt;/dd&gt; 
+&lt;dd&gt;上海 &lt;/dd&gt; 
+&lt;dd&gt;广州 &lt;/dd&gt; 
+&lt;dt&gt;美国城市&lt;/dt&gt; 
+&lt;dd&gt;华盛顿 &lt;/dd&gt; 
+&lt;dd&gt;芝加哥 &lt;/dd&gt; 
+&lt;dd&gt;纽约 &lt;/dd&gt; 
+&lt;/dl&gt;</pre>
+
+<p>
+实现效果如下
+</p>
+
+<p>
+<img src="/lib/exe/fetch.php?media=xhtml:about-dl-dt-dd-code.png" class="media" title="dl、dt、dd标签演示" alt="dl、dt、dd标签演示" />
+</p>
+
+</div>
+<!-- EDIT1 SECTION "dl、dt、dd标签" [1-816] -->
+<h1 class="sectionedit2" id="dl_dt_dd表格实例">dl、dt、dd表格实例</h1>
+<div class="level1">
+
+<p>
+演示
+</p>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=afbc79&amp;media=http%3A%2F%2Fi48.tinypic.com%2F2jadces.jpg" class="media" title="http://i48.tinypic.com/2jadces.jpg"><img src="/lib/exe/fetch.php?tok=afbc79&amp;media=http%3A%2F%2Fi48.tinypic.com%2F2jadces.jpg" class="media" title="dl、dt、dd表格实例演示" alt="dl、dt、dd表格实例演示" /></a>
+</p>
+<pre class="code html4strict"><span class="sc0">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/html.html"><span class="kw2">html</span></a> xmlns<span class="sy0">=</span><span class="st0">&quot;http://www.w3.org/1999/xhtml&quot;</span>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/meta.html"><span class="kw2">meta</span></a> <span class="kw3">http-equiv</span><span class="sy0">=</span><span class="st0">&quot;Content-Type&quot;</span> <span class="kw3">content</span><span class="sy0">=</span><span class="st0">&quot;text/html; charset=gb2312&quot;</span> <span class="sy0">/</span>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/title.html"><span class="kw2">title</span></a>&gt;</span>dl dt dd表格<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/title.html"><span class="kw2">title</span></a>&gt;</span>
+&nbsp;
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/style.html"><span class="kw2">style</span></a>&gt;</span>
+dl,dt,dd{
+	margin:0;
+	background:#fff;
+	font-size:12px;
+	}
+dl{
+	margin:0 auto;
+	width:50%;
+	border:1px solid #ccc;
+	border-bottom:none;
+	}
+dt{
+	font-weight:800;
+	background:#eee;
+	color:#000;
+	}
+dt,dd{
+	line-height:30px;
+	padding:0 0 0 10px;
+	border-bottom:1px solid #eee;
+	height:30px;
+	overflow:hidden
+	}
+dd{
+	text-indent:3em;
+	}
+.fff{
+	background:#fff
+	}
+dt span,dd span{
+	display:block;
+	float:right;
+	font-size:14px;
+	border-left:1px solid #eee;
+	text-indent:0em;
+	width:80px;
+	text-align:center;
+	}
+&nbsp;
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/style.html"><span class="kw2">style</span></a>&gt;</span>
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/body.html"><span class="kw2">body</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dl.html"><span class="kw2">dl</span></a> <span class="kw3">class</span><span class="sy0">=</span>hb&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dt.html"><span class="kw2">dt</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>下载地址<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>更新时间<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>ks5u生物同步课课练（人教版必修一）<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dt.html"><span class="kw2">dt</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.2<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>第一节 从生物圈到细胞生物圈到细生物圈到细生物圈到细生物圈到细生物圈到细生物圈到细生物圈到细<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.3<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>第二节 细胞的多样性和统一性<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.4<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>单元测评<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.5<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>欧美代议制的确立与发展<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.6<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>中国古代文化史<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.7<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>近代中国的政治、经济及思想解放的潮流<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.9<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>近代中国政治发展史<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.10<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>近代中国经济发展史<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.11<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>近代中国思想解放潮流<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.12<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>现代西方的政治、经济与科技文化<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.13<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>罗斯福新政与二战后的世界经济<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.14<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>二战后世界政治格局的演变<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.16<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>19世纪以来的世界文学艺术与科技<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span> 
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.17<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>现代中国的政治、经济及思想文化<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.18<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>现代中国政治发展史 <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.19<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>现代中国物质文明发展史（中国近现代社会生活的变迁、科技等）<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;</span>
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a> <span class="kw3">class</span><span class="sy0">=</span>fff&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>——<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;&lt;<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>11.30<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>&gt;</span>古希腊罗马的政治制度<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dd.html"><span class="kw2">dd</span></a>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/dl.html"><span class="kw2">dl</span></a>&gt;</span>
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/body.html"><span class="kw2">body</span></a>&gt;</span>
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/html.html"><span class="kw2">html</span></a>&gt;</span></pre>
+
+</div>
+<!-- EDIT2 SECTION "dl、dt、dd表格实例" [817-] -->

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://64.78.172.102/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://64.78.172.102/feed.php">
+        <title>菜菜的百科全书</title>
+        <description></description>
+        <link>http://64.78.172.102/</link>
+        <image rdf:resource="http://64.78.172.102/lib/tpl/dokuwiki/images/favicon.ico" />
+       <dc:date>2013-12-05T07:31:19+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://64.78.172.102/lib/tpl/dokuwiki/images/favicon.ico">
+        <title>菜菜的百科全书</title>
+        <link>http://64.78.172.102/</link>
+        <url>http://64.78.172.102/lib/tpl/dokuwiki/images/favicon.ico</url>
+    </image>
+</rdf:RDF>

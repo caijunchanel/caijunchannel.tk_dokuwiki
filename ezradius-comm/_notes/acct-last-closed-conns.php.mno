@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsLastClosed" value="name:RadAcctId;datatype:int,name:UserName;datatype:string,name:AcctStartTime;datatype:datetime,name:AcctStopTime;datatype:datetime,name:AcctSessionTime;datatype:int,name:AcctInputOctets;datatype:int,name:AcctOutputOctets;datatype:int,name:AcctTerminateCause;datatype:string,name:FramedIPAddress;datatype:string" />
+</info>

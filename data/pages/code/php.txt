@@ -1,0 +1,2 @@
+[[code:php:php_develope_1200|PHP开发实例1200例]]\\
+[[code:php:php_func|PHP常用功能函数实例]]\\

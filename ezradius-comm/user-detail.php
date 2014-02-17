@@ -1,0 +1,397 @@
+<?php
+require_once('auth.php');
+?>
+<?php require_once('Connections/cnRadius.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? "'" . doubleval($theValue) . "'" : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$colname_rsUser = "-1";
+if (isset($_GET['username'])) {
+  $colname_rsUser = $_GET['username'];
+}
+mysql_select_db($database_cnRadius, $cnRadius);
+$query_rsUser = sprintf("SELECT * FROM radcheck WHERE UserName = %s AND Attribute LIKE '%%-Password'", GetSQLValueString($colname_rsUser, "text"));
+$rsUser = mysql_query($query_rsUser, $cnRadius) or die(mysql_error());
+$row_rsUser = mysql_fetch_assoc($rsUser);
+$totalRows_rsUser = mysql_num_rows($rsUser);
+
+$colname_rsRadcheckUser = "-1";
+if (isset($_GET['username'])) {
+  $colname_rsRadcheckUser = $_GET['username'];
+}
+mysql_select_db($database_cnRadius, $cnRadius);
+$query_rsRadcheckUser = sprintf("SELECT * FROM radcheck WHERE UserName = %s AND Attribute not like '%%-Password'", GetSQLValueString($colname_rsRadcheckUser, "text"));
+$rsRadcheckUser = mysql_query($query_rsRadcheckUser, $cnRadius) or die(mysql_error());
+$row_rsRadcheckUser = mysql_fetch_assoc($rsRadcheckUser);
+$totalRows_rsRadcheckUser = mysql_num_rows($rsRadcheckUser);
+
+$colname_rsRadreplyUser = "-1";
+if (isset($_GET['username'])) {
+  $colname_rsRadreplyUser = $_GET['username'];
+}
+mysql_select_db($database_cnRadius, $cnRadius);
+$query_rsRadreplyUser = sprintf("SELECT * FROM radreply WHERE UserName = %s", GetSQLValueString($colname_rsRadreplyUser, "text"));
+$rsRadreplyUser = mysql_query($query_rsRadreplyUser, $cnRadius) or die(mysql_error());
+$row_rsRadreplyUser = mysql_fetch_assoc($rsRadreplyUser);
+$totalRows_rsRadreplyUser = mysql_num_rows($rsRadreplyUser);
+
+$colname_rsUserGroup = "-1";
+if (isset($_GET['username'])) {
+  $colname_rsUserGroup = $_GET['username'];
+}
+mysql_select_db($database_cnRadius, $cnRadius);
+$query_rsUserGroup = sprintf("SELECT * FROM usergroup WHERE UserName = %s", GetSQLValueString($colname_rsUserGroup, "text"));
+$rsUserGroup = mysql_query($query_rsUserGroup, $cnRadius) or die(mysql_error());
+$row_rsUserGroup = mysql_fetch_assoc($rsUserGroup);
+$totalRows_rsUserGroup = mysql_num_rows($rsUserGroup);
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tmp1.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>User detail</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<link href="Templates/table.css" rel="stylesheet" type="text/css" /><!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+body {
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	background-color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.oneColFixCtrHdr #container {
+	width: 840px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColFixCtrHdr #header {
+	padding: 0 10px 0 20px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+	background-color: #DDDDDD;
+	background-image: url(images/new_back.bmp);
+	background-repeat: repeat;
+}
+.oneColFixCtrHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+.oneColFixCtrHdr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.oneColFixCtrHdr #footer {
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#DDDDDD;
+}
+.oneColFixCtrHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+-->
+</style>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	left:547px;
+	top:8px;
+	width:297px;
+	height:127px;
+	z-index:1;
+}
+.style1 {font-size: x-small}
+#Layer1 {
+	position:absolute;
+	left:730px;
+	top:28px;
+	width:97px;
+	height:34px;
+	z-index:1;
+}
+-->
+</style>
+<link rel="shortcut icon" href="images/favicon.ico" >
+<link rel="icon" href="images/animated_favicon1.gif" type="image/gif" >
+</head>
+
+<body class="oneColFixCtrHdr">
+<div id="container">
+  <div id="header">
+    <table width="100%" border="0">
+      <tr>
+        <td><a href="http://ezradius.sourceforge.net"><img src="images/ezradius2.png" alt="ezRADIUS Logo" width="216" height="69" border="0" title="ezRADIUS Project at Sourceforge.net" /></a></td>
+      </tr>
+      <tr>
+        <td><ul id="MenuBar1" class="MenuBarHorizontal">
+          <li><a href="index.php">Home</a>              </li>
+          <li><a href="#" class="MenuBarItemSubmenu">Manage</a>
+            <ul>
+              <li><a href="list-alluser.php" class="MenuBarItemSubmenu">List</a>
+                  <ul>
+                    <li><a href="list-alluser.php">All users</a></li>
+                    <li><a href="list-allgroup.php">All packages</a></li>
+                  </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">Add</a>
+                <ul>
+                  <li><a href="add-newuser.php">New User</a></li>
+                  <li><a href="add-newgroup.php">New Package</a></li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+          <li><a class="MenuBarItemSubmenu" href="#">Accounting</a>
+              <ul>
+                <li><a href="acct-last-closed-conns.php">Last closed conns.</a></li>
+                <li><a href="acct-all.php">All Accounting</a> </li>
+                <li><a href="acct-username-input-all.php">Per User</a></li>
+				<li><a href="acct-date-input.php">Per Date</a></li>
+				<li><a href="acct-username-input.php">Per User and Date</a></li>
+              </ul>
+          </li>
+          <li><a href="#" class="MenuBarItemSubmenu">View</a>
+            <ul>
+              <li><a href="online-users.php">Online users</a></li>
+              <li><a href="topusers.php">Top users</a></li>
+            </ul>
+            </li>
+          <li><a href="#" class="MenuBarItemSubmenu">Tool</a>
+              <ul>
+                <li><a href="config-editor.php">Config editor</a></li>
+				<li><a href="list-allnas.php">NAS table</a></li>
+				<li><a href="list-radius-attribute.php">freeRADIUS attributes</a></li>
+                <li><a href="test-user-connectivity.php">Test connectivity</a></li>
+                <li><a href="disconnect-user.php">Force logout user</a></li>
+              </ul>
+          </li>
+          <li><a href="about.php">About</a></li>
+        </ul></td>
+      </tr>
+    </table>
+  <!-- end #header --></div>
+  <div id="mainContent">
+    <!-- InstanceBeginEditable name="Main" -->
+    <?php if ($totalRows_rsUser > 0) { // Show if recordset not empty ?>
+	<fieldset><legend><strong>Username : </strong><strong><?php echo $_GET['username'];?> | </strong><a href="edit-username-user.php?username=<?php echo $_GET['username']; ?>">Edit Username</a> | <a href="acct-username-result.php?username=<?php echo $_GET['username']; ?>">See accounting</a> | <a href="del-user.php?username=<?php echo $row_rsUser['UserName']; ?>">Delete this user</a> | <a href="user-detail-print.php?username=<?php echo $_GET['username']; ?>">Print this page</a> </legend>
+      <table width="100%" border="0">
+        <tr>
+          <td><strong>Password</strong></td>
+        <td>:</td>
+        <td><strong><?php echo $row_rsUser['Value']; ?> | </strong><a href="edit-user-password.php?username=<?php echo $_GET['username']; ?>">Edit Password</a></td>
+      </tr>
+        <tr>
+          <td><strong>Package</strong></td>
+          <td>:</td>
+          <td><?php if ($totalRows_rsUserGroup > 0) { // Show if recordset not empty ?>
+              <strong><a href="group-detail.php?groupname=<?php echo $row_rsUserGroup['GroupName']; ?>"><?php echo $row_rsUserGroup['GroupName']; ?></a></strong> | <a href="edit-user-to-group.php?username=<?php echo $_GET['username']; ?>">Edit User-Package Mapping</a>
+              <?php } // Show if recordset not empty ?>
+            <?php if ($totalRows_rsUserGroup == 0) { // Show if recordset empty ?>
+              <a href="attach-user-to-group.php?username=<?php echo $_GET['username']; ?>">Map user to a package </a>
+              <?php } // Show if recordset empty ?>          </td>
+        </tr>
+      </table>
+      <p><strong>RADCheck Attribute |</strong> <a href="add-radcheck.php?username=<?php echo $_GET['username']; ?>">Add radcheck attribute</a></p>
+      <?php if ($totalRows_rsRadcheckUser == 0) { // Show if recordset empty ?>
+        <p>No data</p>
+        <?php } // Show if recordset empty ?>
+      <?php if ($totalRows_rsRadcheckUser > 0) { // Show if recordset not empty ?>
+        <table width="100%" border="1" class="mytable">
+		<thead class="mythead">
+          <tr>
+            <td>Attribute</td>
+            <td>Op</td>
+            <td>Value</td>
+            <td>&nbsp;</td>
+          </tr>
+		  </thead>
+  			<tbody class="mytbody">
+          <?php do { ?>
+            <tr>
+              <td><?php echo $row_rsRadcheckUser['Attribute']; ?></td>
+              <td><?php echo $row_rsRadcheckUser['op']; ?></td>
+              <td><?php echo $row_rsRadcheckUser['Value']; ?></td>
+              <td><a href="edit-radcheck.php?id=<?php echo $row_rsRadcheckUser['id']; ?>&amp;username=<?php echo $row_rsRadcheckUser['UserName']; ?>">Edit</a> | <a href="del-radcheck.php?id=<?php echo $row_rsRadcheckUser['id']; ?>&amp;username=<?php echo $row_rsRadcheckUser['UserName']; ?>">Delete</a></td>
+            </tr>
+            <?php } while ($row_rsRadcheckUser = mysql_fetch_assoc($rsRadcheckUser)); ?>
+			</tbody>
+        </table>
+        <?php } // Show if recordset not empty ?>
+      <p><strong>RADReply Attribute | </strong><a href="add-radreply.php?username=<?php echo $_GET['username']; ?>">Add radreply attribute</a></p>
+      <?php if ($totalRows_rsRadreplyUser == 0) { // Show if recordset empty ?>
+        <p>No data</p>
+        <?php } // Show if recordset empty ?>
+      <?php if ($totalRows_rsRadreplyUser > 0) { // Show if recordset not empty ?>
+        <table width="100%" border="1" class="mytable">
+		<thead class="mythead">
+          <tr>
+            <td>Attribute</td>
+            <td>Op</td>
+            <td>Value</td>
+            <td>&nbsp;</td>
+          </tr>
+		  </thead>
+  		<tbody class="mytbody">
+          <?php do { ?>
+            <tr>
+              <td><?php echo $row_rsRadreplyUser['Attribute']; ?></td>
+              <td><?php echo $row_rsRadreplyUser['op']; ?></td>
+              <td><?php echo $row_rsRadreplyUser['Value']; ?></td>
+              <td><a href="edit-radreply.php?id=<?php echo $row_rsRadreplyUser['id']; ?>&amp;username=<?php echo $row_rsRadreplyUser['UserName']; ?>">Edit</a> | <a href="del-radreply.php?id=<?php echo $row_rsRadreplyUser['id']; ?>&amp;username=<?php echo $row_rsRadreplyUser['UserName']; ?>">Delete</a></td>
+            </tr>
+            <?php } while ($row_rsRadreplyUser = mysql_fetch_assoc($rsRadreplyUser)); ?>
+			</tbody>
+        </table>
+        <?php } // Show if recordset not empty ?>
+		</fieldset>
+		<?php
+			if ($totalRows_rsUserGroup > 0) {
+		?>
+		<fieldset><legend><b>Package: <strong><a href="group-detail.php?groupname=<?php echo $row_rsUserGroup['GroupName']; ?>"><?php echo $row_rsUserGroup['GroupName']; ?></a></strong></b></legend>
+		<?php
+			//limitation by group/package
+			mysql_select_db($database_cnRadius, $cnRadius);
+			$query_rsGroupCheck = sprintf("SELECT * FROM radgroupcheck WHERE GroupName = %s",GetSQLValueString($row_rsUserGroup['GroupName'], "text"));
+			$rsGroupCheck = mysql_query($query_rsGroupCheck, $cnRadius) or die(mysql_error());
+			$row_rsGroupCheck = mysql_fetch_assoc($rsGroupCheck);
+			$totalRows_rsGroupCheck = mysql_num_rows($rsGroupCheck);
+
+			mysql_select_db($database_cnRadius, $cnRadius);
+			$query_rsGroupReply = sprintf("SELECT * FROM radgroupreply WHERE GroupName = %s", GetSQLValueString($row_rsUserGroup['GroupName'], "text"));
+			$rsGroupReply = mysql_query($query_rsGroupReply, $cnRadius) or die(mysql_error());
+			$row_rsGroupReply = mysql_fetch_assoc($rsGroupReply);
+			$totalRows_rsGroupReply = mysql_num_rows($rsGroupReply);
+		?>
+		<?php if (($totalRows_rsGroupCheck == 0) && ($totalRows_rsGroupReply== 0)) { // Show if recordset empty ?>
+        <p>Invalid input: Specified package does not exists! </p>
+        <?php } // Show if recordset empty ?>
+    <?php if (($totalRows_rsGroupCheck >0) || ($totalRows_rsGroupReply>0)) { // Show if recordset not empty ?>
+      
+      <p><strong>RadGroupCheck</strong></p>
+      <?php if ($totalRows_rsGroupCheck == 0) { // Show if recordset empty ?>
+        <p>No Data</p>
+        <?php } // Show if recordset empty ?>
+      <?php if ($totalRows_rsGroupCheck > 0) { // Show if recordset not empty ?>
+        <table border="1" class="mytable">
+		<thead class="mythead">
+          <tr>
+            <td>id</td>
+            <td>Attribute</td>
+            <td>op</td>
+            <td>Value</td>
+          </tr>
+		  </thead>
+		  <tbody class="mytbody">
+          <?php do { ?>
+            <tr>
+              <th><?php echo $row_rsGroupCheck['id']; ?></th>
+              <td><?php echo $row_rsGroupCheck['Attribute']; ?></td>
+              <td><?php echo $row_rsGroupCheck['op']; ?></td>
+              <td><?php echo $row_rsGroupCheck['Value']; ?></td>
+            </tr>
+            <?php } while ($row_rsGroupCheck = mysql_fetch_assoc($rsGroupCheck)); ?>
+			</tbody>
+        </table>
+        <?php } // Show if recordset not empty ?>
+      <p><strong>RadGroupReply</strong></p>
+      <?php if ($totalRows_rsGroupReply == 0) { // Show if recordset empty ?>
+        <p>No Data</p>
+        <?php } // Show if recordset empty ?>
+      <?php if ($totalRows_rsGroupReply > 0) { // Show if recordset not empty ?>
+        <table border="1" class="mytable">
+		<thead class="mythead">
+          <tr>
+            <td>id</td>
+            <td>Attribute</td>
+            <td>op</td>
+            <td>Value</td>
+          </tr>
+		  </thead>
+		  <tbody class="mytbody">
+          <?php do { ?>
+            <tr>
+              <th><?php echo $row_rsGroupReply['id']; ?></th>
+              <td><?php echo $row_rsGroupReply['Attribute']; ?></td>
+              <td><?php echo $row_rsGroupReply['op']; ?></td>
+              <td><?php echo $row_rsGroupReply['Value']; ?></td>
+            </tr>
+            <?php } while ($row_rsGroupReply = mysql_fetch_assoc($rsGroupReply)); ?>
+			</tbody>
+        </table>
+        <?php } // Show if recordset not empty ?>
+      <?php } // Show if recordset not empty ?>
+		</fieldset>
+		<?php
+			};
+		?>
+      <?php } // Show if recordset not empty ?>
+      <?php if ($totalRows_rsUser == 0) { // Show if recordset empty ?>
+        Invalid input: Specified user does not  exist!
+        <?php } // Show if recordset empty ?>
+<!-- InstanceEndEditable -->
+    <!-- end #mainContent -->
+  </div>
+  <div id="footer">
+    <table width="100%" border="0">
+      <tr>
+        <td><strong><a href="http://sourceforge.net/projects/ezradius">ezRADIUS v0.2.1comm</a></strong><span class="style1"> <br />
+        </span></td>
+        <td><div align="right"><a href="http://www.undip.ac.id"><img src="images/undip_warna_transparent.png" alt="Diponegoro University" name="undip" width="42" height="49" border="0" id="undip" title="Goto Diponegoro University" /></a>&nbsp;<a href="http://sourceforge.net/donate/index.php?group_id=221332"><img src="images/project-support.jpg" alt="Support project" name="Donate" width="88" height="32" border="0" id="Donate" title="Donate to this project" /></a></div></td>
+      </tr>
+    </table>
+    <!-- end #footer -->
+  </div>
+<!-- end #container --></div>
+<script type="text/javascript">
+<!--
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"../SpryAssets/SpryMenuBarDownHover.gif", imgRight:"../SpryAssets/SpryMenuBarRightHover.gif"});
+//-->
+</script>
+</body>
+<!-- InstanceEnd --></html>
+<?php
+mysql_free_result($rsUser);
+
+mysql_free_result($rsRadcheckUser);
+
+mysql_free_result($rsRadreplyUser);
+
+mysql_free_result($rsUserGroup);
+?>

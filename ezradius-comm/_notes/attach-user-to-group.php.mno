@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsGroupname" value="name:Groupname;datatype:string" />
+	<infoitem key="UD_rsGroupAll" value="name:groupname;datatype:string" />
+</info>

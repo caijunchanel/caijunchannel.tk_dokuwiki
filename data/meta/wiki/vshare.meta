@@ -1,0 +1,10 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1386755356;s:8:"modified";i:1386755697;}s:7:"creator";s:12:"caijunchanel";s:4:"user";s:6:"caijun";s:11:"last_change";a:7:{s:4:"date";i:1386755697;s:2:"ip";s:12:"180.173.93.6";s:4:"type";s:1:"E";s:2:"id";s:11:"wiki:vshare";s:4:"user";s:6:"caijun";s:3:"sum";s:0:"";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:6:"caijun";s:12:"caijunchanel";}s:5:"title";s:23:"Dokuwiki下插入视频";s:11:"description";a:2:{s:15:"tableofcontents";a:5:{i:0;a:4:{s:3:"hid";s:23:"dokuwiki下插入视频";s:5:"title";s:23:"Dokuwiki下插入视频";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:18:"下载vshare插件";s:5:"title";s:20:"1.下载vshare插件";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:21:"修改sitesconf文件";s:5:"title";s:24:"2.修改sites.conf文件";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:12:"寻找视频";s:5:"title";s:14:"3.寻找视频";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:4;a:4:{s:3:"hid";s:18:"修改视频大小";s:5:"title";s:20:"4.修改视频大小";s:4:"type";s:2:"ul";s:5:"level";i:2;}}s:8:"abstract";s:268:"1.下载vshare插件
+
+下载plugin:vshare插件，默认已经支持很多国外视频网站。
+
+2.修改sites.conf文件
+
+下载后修改插件文件夹下的文件。添加如下代码：
+
+
+youku           flash   http://player.youku.com/player.php/sid/@VIDEO@/v.swf";}s:8:"internal";a:2:{s:5:"cache";b:0;s:3:"toc";b:1;}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1386755356;s:8:"modified";i:1386755697;}s:7:"creator";s:12:"caijunchanel";s:4:"user";s:6:"caijun";s:11:"last_change";a:7:{s:4:"date";i:1386755697;s:2:"ip";s:12:"180.173.93.6";s:4:"type";s:1:"E";s:2:"id";s:11:"wiki:vshare";s:4:"user";s:6:"caijun";s:3:"sum";s:0:"";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:6:"caijun";s:12:"caijunchanel";}}}

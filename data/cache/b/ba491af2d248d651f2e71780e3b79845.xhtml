@@ -1,0 +1,23 @@
+
+<h1 class="sectionedit1" id="隐藏apache访问错误显示系统和版本信息">隐藏apache访问错误显示系统和版本信息</h1>
+<div class="level1">
+
+<p>
+前面详细讲解了如何修改nginx的header信息从而伪装nginx版本信息，apache也可以做相应的修改，
+</p>
+
+<p>
+如果访问一个不存在url则会如图显示操作系统信息、apache版本信息，同样会带来不安全的因素
+</p>
+
+<p>
+修改/etc/httpd/conf/httpd.conf文件中的两处
+</p>
+<pre class="code">#set to one of:On |Off |EMail
+#
+ ServerSignature Off
+#find out what major optional modules you are running
+ ServerTokens Prod
+重启apache</pre>
+
+</div>

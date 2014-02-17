@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsNAS" value="name:id;datatype:int,name:nasname;datatype:string,name:shortname;datatype:string,name:type;datatype:string,name:ports;datatype:int,name:secret;datatype:string,name:community;datatype:string,name:description;datatype:string,name:notifytype;datatype:string" />
+</info>

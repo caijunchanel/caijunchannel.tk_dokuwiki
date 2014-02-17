@@ -1,0 +1,209 @@
+====== 用yum安装Apache,Mysql,PHP. ======
+ 
+2.1安装Apache 
+
+yum install httpd httpd-devel 
+
+安装完成后，用/etc/init.d/httpd start 启动apache 
+
+设为开机启动:chkconfig httpd on 
+
+2.2 安装mysql 
+
+2.2.1 yum install mysql mysql-server mysql-devel 
+
+同样，完成后，用/etc/init.d/mysqld start 启动mysql 
+
+2.2.2 设置mysql密码 
+
+启动mysql控制台：  mysql
+
+ mysql>; USE mysql; 
+ mysql>; UPDATE user SET Password=PASSWORD('newpassword') WHERE user='root'; 
+ mysql>; FLUSH PRIVILEGES; 
+
+2.2.3 允许远程登录 
+
+ mysql -u root -p 
+
+ Enter Password: <your new password> 
+
+ mysql>GRANT ALL PRIVILEGES ON *.* TO '用户名'@'%' IDENTIFIED BY '密码' WITH GRANT OPTION; 
+
+完成后就能用mysql-front远程管理mysql了。 
+
+2.2.4 设为开机启动 
+
+ chkconfig mysqld on 
+
+3. 安装php 
+
+ yum install php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml 
+
+ /etc/init.d/httpd start 
+
+
+/升级默认的php5.1到5.2
+
+vi gedit /etc/yum.repos.d/utterramblings.repo
+
+在打开的文件中加入以下内容：
+
+'' [utterramblings]
+
+ name=Jason’s Utter Ramblings Repo
+
+ baseurl=http://www.jasonlitka.com/media/EL$releasever/$basearch/
+
+ enabled=1
+
+ gpgcheck=1
+
+ gpgkey=http://www.jasonlitka.com/media/RPM-GPG-KEY-jlitka''
+
+保存
+
+ yum update php
+ 
+安装ZendOptimizer
+
+1、下载文件：
+
+ http://downloads.zend.com/optimizer/3.3.9/ZendOptimizer-3.3.9-linux-glibc23-i386.tar.gz  （32位）
+ http://downloads.zend.com/optimizer/3.3.9/ZendOptimizer-3.3.9-linux-glibc23-x86_64.tar.gz  （64位）
+
+2、解压
+
+解压后把ZendOptimizer-3.3.9-linux-glibc23-x86_64/data/5_2_x_comp目录下的ZendOptimizer.so拷贝到某一个目录，比如/usr/local/Zend/lib/
+
+Zend optimizer 3.3.9有一些新的改动，不需要安装了，直接在php.ini文件里面引用.so文件即可：
+
+3、修改/etc/php.ini文件
+
+找到：zend.ze1_compatibility_mode = Off
+
+修改为：zend.ze1_compatibility_mode = On
+
+在末尾加上以下文字：
+
+ [Zend Optimizer]
+
+ zend_optimizer.optimization_level=1
+
+ zend_extension="/usr/local/Zend/lib/ZendOptimizer.so"
+
+4、重启httpd服务，通过php -v 可以看效果。
+ 
+安装eaccelerator
+
+直接yum install php-eaccelerator
+
+如果找不到，线 yum search eaccelerator
+ 
+虚拟主机安装时注意，如果出现多个域名都指向同一个目录的情况
+
+NameVirtualHost 127.0.0.1:80    #这句一定要和 <VirtualHost 127.0.0.1:80>配合才可以。
+
+ <VirtualHost 127.0.0.1:80>
+
+ DocumentRoot /var/www/html
+
+ ServerName t.dagongz.com
+
+ <Directory "/var/www/html">
+
+ allow from all
+
+ Options +Indexes
+
+ </Directory>
+
+ </VirtualHost>
+
+ <VirtualHost 127.0.0.1:80>
+
+ DocumentRoot /var/www/html/test/
+
+ ServerName test.dagongz.com
+
+ <Directory "/var/www/html/test/">
+
+ allow from all
+
+ Options +Indexes
+
+ </Directory>
+
+ </VirtualHost>
+ 
+开启缓存Expires模块要有
+
+ ExpiresActive   on 
+ ExpiresDefault   "access plus 86400 second"
+ 
+卸载Mysql
+ 
+[root@localhost ~]# rpm -qa|grep mysql
+ 
+mod_auth_mysql-2.6.1-2.2
+ 
+php-mysql-4.3.9-3.15
+ 
+mysql-devel-4.1.20-1.RHEL4.1
+ 
+mysql-4.1.20-1.RHEL4.1
+ 
+mysqlclient10-3.23.58-4.RHEL4.1
+ 
+libdbi-dbd-mysql-0.6.5-10.RHEL4.1
+ 
+ 
+说明：rpm –qa | grep mysql 命令是为了把mysql相关的包都列出来，我上面的例子是LinuxAS4默认安装mysql的rpm软件包列表，
+
+如果是别的Linux版本列出来的列表有可能会不一样，不过不用担心，不管是什么，卸载都从最下面的一个包开始，直到卸载掉第一个为止。 
+ 
+说明：rpm –e是卸载rpm包的命令，后面是包名称，最后的版本号是不用打的，比如我们下一步卸载mysqlclient10-3.23.58-4.RHEL4.1包
+
+方法如下：
+ 
+rpm –e mysqlclient
+ 
+卸载Apache
+ 
+[root@localhost ~]# rpm -qa|grep httpd
+ 
+httpd-manual-2.0.52-25.ent
+ 
+system-config-httpd-1.3.1-1
+ 
+httpd-2.0.52-25.ent
+ 
+httpd-suexec-2.0.52-25.ent
+ 
+说明：方法跟卸载Mysql一样，不用说了吧
+  
+卸载PHP
+ 
+[root@localhost ~]# rpm -qa|grep php
+ 
+php-odbc-4.3.9-3.15
+ 
+php-4.3.9-3.15
+ 
+php-mysql-4.3.9-3.15
+ 
+php-pear-4.3.9-3.15
+ 
+php-ldap-4.3.9-3.15
+ 
+php-pgsql-4.3.9-3.15 
+ 
+说明：方法跟卸载Mysql一样
+ 
+注意：卸载的时候如果卸载不掉，系统一般会提示包的依赖关系，并且列出依赖的包的名称，先卸载提示依赖的包就可以了。
+ 
+如果实在实在有卸载不掉的包，可以加—nodeps这个参数来卸载，比如我们卸载php-4.3.9-3.15，实在卸不掉了。
+  
+就用：
+ 
+[root@localhost ~]# rpm -e php-4.3.9-3.15 --nodeps

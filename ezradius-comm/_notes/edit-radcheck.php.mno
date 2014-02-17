@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsRadcheck" value="name:id;datatype:int,name:UserName;datatype:string,name:Attribute;datatype:string,name:op;datatype:string,name:Value;datatype:string" />
+</info>

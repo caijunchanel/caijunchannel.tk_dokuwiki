@@ -1,0 +1,48 @@
+
+<h2 class="sectionedit1" id="php常用功能函数实例">PHP常用功能函数实例</h2>
+<div class="level2">
+
+<p>
+展示PHP的配置信息
+</p>
+<pre class="code">  
+  echo phpinfo();
+  
+  </pre>
+
+<p>
+打印系统时间
+</p>
+<pre class="code">  echo date(&#039;Y-m-s H:i:s&#039;);</pre>
+
+<p>
+修改php.ini设置系统时间
+</p>
+<pre class="code"> 修改php.ini文件中的设置,找到[date]下的&quot;date.timezone=&quot;选项，
+ 将该项修改成&quot;date.timezone=Asia/shanghai&quot;,再重启Apache服务。</pre>
+
+<p>
+打印当前执行的PHP文件路径和文件名
+</p>
+<pre class="code"> echo __FILE__;
+ </pre>
+
+<p>
+单引号和双引号的区别
+</p>
+<pre class="code"> 最大的区别是，双引号中包含的变量会自动转换为实际数值， 单引号则按普通字符输出。</pre>
+
+<p>
+动态输出Javascript代码
+</p>
+<pre class="code"> 使用&lt;&lt;&lt;mark.....mark;
+&lt;?php
+$str=&lt;&lt;&lt;mark
+&lt;script language=&quot;javascript&quot; type=&quot;text/javacript&quot;&gt;
+       alert(&quot;欢迎&quot;);
+&lt;/script&gt;
+mark;
+echo $str;
+?&gt;</pre>
+
+</div>

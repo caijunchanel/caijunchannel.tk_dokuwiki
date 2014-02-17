@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsUser" value="name:id;datatype:int,name:UserName;datatype:string,name:Attribute;datatype:string,name:op;datatype:string,name:Value;datatype:string" />
+	<infoitem key="UD_rsRadcheckUser" value="name:id;datatype:int,name:UserName;datatype:string,name:Attribute;datatype:string,name:op;datatype:string,name:Value;datatype:string" />
+	<infoitem key="UD_rsRadreplyUser" value="name:id;datatype:int,name:UserName;datatype:string,name:Attribute;datatype:string,name:op;datatype:string,name:Value;datatype:string" />
+	<infoitem key="UD_rsUserGroup" value="name:UserName;datatype:string,name:GroupName;datatype:string,name:priority;datatype:int" />
+</info>

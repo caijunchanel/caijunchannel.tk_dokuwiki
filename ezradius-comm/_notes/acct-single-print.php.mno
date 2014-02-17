@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsAcct" value="name:RadAcctId;datatype:int,name:AcctSessionId;datatype:string,name:AcctUniqueId;datatype:string,name:UserName;datatype:string,name:Realm;datatype:string,name:NASIPAddress;datatype:string,name:NASPortId;datatype:string,name:NASPortType;datatype:string,name:AcctStartTime;datatype:datetime,name:AcctStopTime;datatype:datetime,name:AcctSessionTime;datatype:int,name:AcctAuthentic;datatype:string,name:ConnectInfo_start;datatype:string,name:ConnectInfo_stop;datatype:string,name:AcctInputOctets;datatype:int,name:AcctOutputOctets;datatype:int,name:CalledStationId;datatype:string,name:CallingStationId;datatype:string,name:AcctTerminateCause;datatype:string,name:ServiceType;datatype:string,name:FramedProtocol;datatype:string,name:FramedIPAddress;datatype:string,name:AcctStartDelay;datatype:int,name:AcctStopDelay;datatype:int" />
+	<infoitem key="UD_rsGroup" value="name:UserName;datatype:string,name:GroupName;datatype:string,name:priority;datatype:int" />
+</info>

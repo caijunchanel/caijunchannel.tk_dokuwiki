@@ -1,0 +1,74 @@
+Requirements:
+1. Apache 2
+2. PHP 4 or above
+3. MySQL 3 or above
+4. GNU/Linux (not tested on BSD's)
+
+Assumption:
+1. FreeRADIUS configured to use MySQL as a backend database
+2. Apache DocumentRoot is /var/www
+3. you have root permission
+4. PHP have file operations(fopen, fclose, fwrite, unlink) permission
+
+Before you begin:
+1. reading log files need 'adm' permission granted to 'www-data' (apache user), that is, in /etc/groups, 'www-data' must be listed in 'adm' group
+2. users are authenticated using PAP module/protocol, see further below how to setup.
+3. to use 'kick user' feature, you must start Chillispot with coaport option, see below.
+
+Installation:
+1. extract all files in /var/www, make sure all ezRADIUS files owned by 'www-data' or whoever that run Apache server (chown -R www-data:www-data /var/www/ezradius-intl)
+2. access ezRADIUS using your webbrowser, default username is admin and the password is admin
+3. You'll be redirected to configuration page, edit administrator username adn password, freeRADIUS version, and MySQL parameters(host, database name, username and password)
+4. done!
+
+Upgrading:
+1. If you want to upgrade, just overwrite old files with the new ones, don't forget to reconfigure.
+
+***********************************User login setup***********************************
+I forget to mention that FreeRADIUS must use MD5 to encrypt the user's password AND the user must authenticate using PAP protocol. 
+       
+What FreeRADIUS version do you have? 
+==================================== 
+If you use FreeRADIUS below 1.1.4, then edit /etc/freeradius/radiusd.conf  
+line 569 the default is: 
+      encryption_scheme = crypt 
+change into this: 
+      encryption_scheme = md5 
+And the user must have: 
+      AuthType := PAP 
+in their RadCheck OR RadGroupCheck attributes 
+See the detail on forum: http://sourceforge.net/forum/forum.php?thread_id=1985176&forum_id=797965
+====================================
+If you have FreeRADIUS version 1.1.4 or above, then edit /etc/freeradius/radiusd.conf: 
+Line 577 make sure it says:  
+      auto_header = yes 
+in 'authorize' section make sure you list 'pap' last in this section. 
+No need to add AuthType attribute in their RadCheck or RadGroupCheck, FreeRADIUS will handle this 
+====================================
+**************************************************************************************
+
+*********************************Using 'kick user' feature****************************
+Before you can 'kick'/force user to logout, you must make sure that Chillispot are running using --coaport option.
+
+I'm using Debian etch. First we have to edit Chillispot daemon startup script so he start with --coaport option.:
+
+    * open you favorite editor to edit /etc/init.d/chillispot
+    * find DAEMON_ARGS variable, change into this:
+
+DAEMON_ARGS="--coaport 3779 --conf /etc/chilli.conf"
+
+    * save the file
+    * now open /etc/chilli.conf with your editor, add the following line at the end of file:
+
+coaport 3779
+
+    * save the file, then restart Chillispot(/etc/init.d/chillispot restart).
+**************************************************************************************
+
+I create this apps with Dreamweaver CS3 under Windows (and Dreamweaver 8 under Linux) and sorry there's no documentation yet!
+
+External library used:
+-Flat-File-Database (FFDB) PHP Library by John Papandriopoulos
+
+feedback/help: achmad.zaenuri@gmail.com
+homepage: http://achmadz.blogspot.com, http://ezradius.sourceforge.net, http://sourceforge.net/projects/ezradius

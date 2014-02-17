@@ -1,0 +1,39 @@
+====== Dokuwiki下插入视频 ======
+=====1.下载vshare插件=====
+下载[[doku>plugin:vshare]]插件，默认已经支持很多国外视频网站。
+=====2.修改sites.conf文件=====
+下载后修改插件文件夹下的<html>sites.conf</html>文件。添加如下代码：
+<code>
+youku           flash   http://player.youku.com/player.php/sid/@VIDEO@/v.swf
+</code>
+=====3.寻找视频=====
+在优酷上寻找视频，假设地址为：
+<html>
+http://v.youku.com/v_show/id_XMzQxNDE4OTQ0.html
+</html>
+
+使用id_后面的代码。然后在页面中插入如下代码即可。
+<code>
+{{youku>XMzQxNDE4OTQ0}}
+</code>
+
+=====4.修改视频大小=====
+视频大小有<html>small</html>，<html>large</html>。如若修改长宽比，修改插件文件夹下<html>syntax.php</html>文件。
+<code php>
+        list($vid,$param) = explode('?',$vid,2);
+        if(preg_match('/(\d+)x(\d+)/i',$param,$m)){     // custom
+            $width  = $m[1];
+            $height = $m[2];
+        }elseif(strpos($param,'small') !== false){      // small
+            $width  = 520;
+            $height = 406;
+        }elseif(strpos($param,'large') !== false){      // large
+            $width  = 688;
+            $height = 574;
+        }else{                                          // medium
+            $width  = 425;
+            $height = 350;
+        }
+</code>
+
+~~NOCACHE~~

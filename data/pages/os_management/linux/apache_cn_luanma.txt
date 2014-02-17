@@ -1,0 +1,7 @@
+====== Apache 中文显示乱码问题的解决 ======
+用Apache 2.2发布一个html网页，访问时发现网页中的中文全部显示乱码。\\
+之前在IIS上发布显示很正常，网页本身编码应该是没问题的。查看源代码确定html文档编码为GB2312。\\
+在/etc/httpd/conf/httpd.conf 文件查找AddDefaultCharset字段，发现默认的配置为： UTF-8\\
+将UTF-8改为： GBK 或者 GB2312 重启httpd服务后，中文显示正常\\
+在网上看到其他人说，将 UTF-8改为GBK/GB2312  确实可以让中文正常显示，但是UTF-8编码的文件又会乱码。 \\
+将AddDefaultCharset 设置为 OFF ，重启httpd服务，就可以按照网页源代码中声明的编码格式显示了。\\

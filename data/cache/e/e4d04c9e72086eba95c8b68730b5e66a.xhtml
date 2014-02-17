@@ -1,0 +1,54 @@
+
+<h2 class="sectionedit1" id="如何利用shell脚本备份网站数据到远程linux主机上">如何利用shell脚本备份网站数据到远程linux主机上</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT1 SECTION "如何利用shell脚本备份网站数据到远程linux主机上" [2-78] -->
+<h3 class="sectionedit2" id="创建backupsh_文件">1.创建backup.sh 文件</h3>
+<div class="level3">
+<pre class="code">  [root@niko ~]# vim backup.sh  </pre>
+<pre class="code">  #!/bin/bash
+  backdir=/backup 
+  month=`date +%m`
+  day=`date +%d`
+  year=`date +%Y`
+  dirname=$year-$month-$day
+  mkdir -p $backdir/$dirname
+  mkdir -p $backdir/$dirname/conf
+  mkdir -p $backdir/$dirname/web
+  mkdir -p $backdir/$dirname/db
+  gzupload=upload.tgz
+  cp /etc/httpd/conf/httpd.conf $backdir/$dirname/conf/httpd.conf
+  cd /var/www/html/
+  tar -zcvf $backdir/$dirname/web/$gzupload ./
+  scp -r /backup/$dirname root@199.101.117.xx:/backup
+  </pre>
+
+</div>
+<!-- EDIT2 SECTION "1.创建backup.sh 文件" [79-638] -->
+<h3 class="sectionedit3" id="设置定时执行">2.设置定时执行</h3>
+<div class="level3">
+<pre class="code">  crontab -e 设置每日定时执行back.sh
+  
+  [root@niko ~]# crontab -e</pre>
+
+<p>
+    设置每日的10:28分运行backup.sh脚本，注意脚本名最好写绝对路径
+</p>
+<pre class="code">  
+  28 10 * * * /root/backup.sh</pre>
+
+</div>
+<!-- EDIT3 SECTION "2.设置定时执行" [639-882] -->
+<h3 class="sectionedit4" id="设置脚本运行权限">3. 设置脚本运行权限</h3>
+<div class="level3">
+<pre class="code">  [root@niko ~]#chmod +x /root/backup.sh</pre>
+
+</div>
+<!-- EDIT4 SECTION "3. 设置脚本运行权限" [883-963] -->
+<h3 class="sectionedit5" id="在另一台备份服务器上新建backup这个文件夹">4. 在另一台备份服务器上新建backup这个文件夹</h3>
+<div class="level3">
+<pre class="code">  [root@test backup]#mkdir /backup</pre>
+
+</div>
+<!-- EDIT5 SECTION "4. 在另一台备份服务器上新建backup这个文件夹" [964-] -->

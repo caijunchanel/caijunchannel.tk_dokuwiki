@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsTotAcctUser" value="name:SUM(AcctSessionTime);datatype:real,name:COUNT(RadAcctId);datatype:int,name:SUM(AcctInputOctets);datatype:real,name:SUM(AcctOutputOctets);datatype:real" />
+	<infoitem key="UD_rsAcctUser" value="name:RadAcctId;datatype:int,name:UserName;datatype:string,name:FramedIPAddress;datatype:string,name:AcctStartTime;datatype:datetime,name:AcctStopTime;datatype:datetime,name:AcctSessionTime;datatype:int,name:AcctInputOctets;datatype:int,name:AcctOutputOctets;datatype:int,name:AcctTerminateCause;datatype:string,name:NASIPAddress;datatype:string" />
+</info>

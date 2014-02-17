@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsTopBandwidth" value="name:UserName;datatype:string,name:FramedIPAddress;datatype:string,name:AcctStartTime;datatype:datetime,name:AcctStopTime;datatype:datetime,name:Time;datatype:real,name:Upload;datatype:real,name:Download;datatype:real,name:AcctTerminateCause;datatype:string,name:NASIPAddress;datatype:string,name:Bandwidth;datatype:real" />
+	<infoitem key="UD_rsTopTime" value="name:UserName;datatype:string,name:FramedIPAddress;datatype:string,name:AcctStartTime;datatype:datetime,name:AcctStopTime;datatype:datetime,name:Time;datatype:real,name:Upload;datatype:real,name:Download;datatype:real,name:AcctTerminateCause;datatype:string,name:NASIPAddress;datatype:string,name:Bandwidth;datatype:real" />
+</info>

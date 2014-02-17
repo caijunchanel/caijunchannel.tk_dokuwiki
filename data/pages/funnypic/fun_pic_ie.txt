@@ -1,0 +1,8 @@
+=====如果浏览器是一种枪=====
+{{ :funnypic:gun_browser.jpg?nolink&300 |}}
+
+=====反射弧有点长…======
+{{ :funnypic:brower_speed.jpg?nolink&300 |}}
+
+=====成长的烦恼=====
+{{ :funnypic:growup_browser.jpg?nolink&300 |}}

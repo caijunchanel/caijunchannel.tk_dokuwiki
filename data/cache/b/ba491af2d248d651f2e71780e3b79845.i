@@ -1,0 +1,6 @@
+a:15:{i:0;a:3:{i:0;s:14:"document_start";i:1;a:0:{}i:2;i:0;}i:1;a:3:{i:0;s:6:"header";i:1;a:3:{i:0;s:51:"隐藏apache访问错误显示系统和版本信息";i:1;i:1;i:2;i:1;}i:2;i:1;}i:2;a:3:{i:0;s:12:"section_open";i:1;a:1:{i:0;i:1;}i:2;i:1;}i:3;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:1;}i:4;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:121:"前面详细讲解了如何修改nginx的header信息从而伪装nginx版本信息，apache也可以做相应的修改，";}i:2;i:68;}i:5;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:189;}i:6;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:189;}i:7;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:123:"如果访问一个不存在url则会如图显示操作系统信息、apache版本信息，同样会带来不安全的因素";}i:2;i:191;}i:8;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:314;}i:9;a:3:{i:0;s:6:"p_open";i:1;a:0:{}i:2;i:314;}i:10;a:3:{i:0;s:5:"cdata";i:1;a:1:{i:0;s:50:"修改/etc/httpd/conf/httpd.conf文件中的两处";}i:2;i:316;}i:11;a:3:{i:0;s:7:"p_close";i:1;a:0:{}i:2;i:367;}i:12;a:3:{i:0;s:12:"preformatted";i:1;a:1:{i:0;s:138:"#set to one of:On |Off |EMail
+#
+ ServerSignature Off
+#find out what major optional modules you are running
+ ServerTokens Prod
+重启apache";}i:2;i:367;}i:13;a:3:{i:0;s:13:"section_close";i:1;a:0:{}i:2;i:367;}i:14;a:3:{i:0;s:12:"document_end";i:1;a:0:{}i:2;i:367;}}

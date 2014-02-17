@@ -1,0 +1,73 @@
+.mytable
+{
+	border               : 1px solid #CCC;
+	border-collapse      : collapse;
+  	font                 : small/1.5 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+}
+.mytable
+{
+	border                :none;
+	border                :1px solid #CCC;
+}
+.mythead, th
+.mytbody, th
+{
+	background         : #FFF url(../images/th_bck.gif) repeat-x;
+  	color                 	: #0000;  
+	padding               : 5px 10px;
+  	border-left           	: 1px solid #CCC;
+}
+.mytbody th
+{
+  background            : #fafafb;
+  border-top            : 1px solid #CCC;
+  text-align            : left;
+  font-weight           : normal;
+}
+.mytbody tr td
+{
+	padding               : 5px 10px;
+  	color                 : #0000;
+}
+.mytbody tr:hover
+{
+  	background            : #FFF url(../images/tr_bck.gif) repeat;
+}
+
+.mytbody tr:hover td
+{
+  	color                 : #454545;
+}
+.mytfoot td,
+.mytfoot th
+{
+  	border-left           : none;
+  	border-top            : 1px solid #CCC;
+	padding               : 4px;
+  	background            : #FFF url(../images/foot_bck.gif) repeat;
+  	color                 : #666;
+}
+.mycaption
+{
+	text-align            : left;
+	font-size             : 120%;
+	padding               : 10px 0;
+	color                 : #666;
+}
+.mytable a:link
+{
+	color                 : #666;
+}
+.mytable a:visited
+{
+	color                 : #666;
+}
+.mytable a:hover
+{
+	color                 : #003366;
+	text-decoration       : none;
+}
+.mytable a:active
+{
+	color                 : #003366;
+}

@@ -1,0 +1,41 @@
+
+=====如何利用shell脚本备份网站数据到远程linux主机上======
+
+==== 1.创建backup.sh 文件 ====
+
+
+    [root@niko ~]# vim backup.sh  
+
+    #!/bin/bash
+    backdir=/backup 
+    month=`date +%m`
+    day=`date +%d`
+    year=`date +%Y`
+    dirname=$year-$month-$day
+    mkdir -p $backdir/$dirname
+    mkdir -p $backdir/$dirname/conf
+    mkdir -p $backdir/$dirname/web
+    mkdir -p $backdir/$dirname/db
+    gzupload=upload.tgz
+    cp /etc/httpd/conf/httpd.conf $backdir/$dirname/conf/httpd.conf
+    cd /var/www/html/
+    tar -zcvf $backdir/$dirname/web/$gzupload ./
+    scp -r /backup/$dirname root@199.101.117.xx:/backup
+    
+==== 2.设置定时执行  ====
+
+    crontab -e 设置每日定时执行back.sh
+    
+    [root@niko ~]# crontab -e
+ 
+    设置每日的10:28分运行backup.sh脚本，注意脚本名最好写绝对路径
+    
+    28 10 * * * /root/backup.sh
+ 
+====3. 设置脚本运行权限====
+
+    [root@niko ~]#chmod +x /root/backup.sh
+
+====4. 在另一台备份服务器上新建backup这个文件夹====
+
+    [root@test backup]#mkdir /backup

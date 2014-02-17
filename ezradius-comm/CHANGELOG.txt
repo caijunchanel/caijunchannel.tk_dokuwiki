@@ -1,0 +1,44 @@
+Changelog:
+2008-04-28
+-ezRADIUS 0.2.1stable released
+-new feature : NAS table editor
+-new feature : user can add/edit/delete freeRADIUS radreply/radcheck attribute list
+-improv. : on online user page shows user's groupname
+-improv. : more infos on about page
+
+2008-04-16:
+-ezRADIUS 0.2.1beta released
+-new feature : accounting by user only, date only or by user and date
+-improv. : list of topusers by time and bandwidth (both)
+-fixed : radreply attributes regarding to bytes limitations are removed if the freeRADIUS version is 1.1.3 and below (this version of freeRADIUS does not support bytes limitation yet)
+-improv. : removed some useless log reporting like system logs and radius logs, you can always login to your server and read logs directly.
+-improv. : removed useless library from daloRADIUS
+-improv. : created my own PHP codes to test user connectivity and force user to disconnect
+-improv. : added some infos on 'About' page
+
+2008-04-11:
+-ezRADIUS 0.2beta released
+-new look, new logo, old design
+-fixed file permission denied problem
+-fixed security issue : user can directly access config.ini and database.ini
+-fixed some typos
+-new feature : can delete single accounting record of specific user
+-new feature : in add new user you can directly attach new user to specified group
+-new feature : now cleartext password allowed
+-new feature : can view who's attched to specified user
+-new feature : can remove a user from his group (by selecting 'None' on editing user-group mapping)
+-improv. : 'kick-user' now with radzap, to make sure there's no stalled connection
+-improv. : 'user online' list auto update (do some AJAX here)
+-improv. : reply and check (freeradius) attributes separated from main file, you can edit/add/delete by editing static-authcheck.php, static-authreply.php, and static-operator.php
+-new : added hyperlink to my University site and Sourceforge donation page (I need some money to keep alive ;))
+
+2008-03-27: 
+-ezRADIUS 0.1Stable released
+-fixed bugs on editing username, thanks to ispyisail
+-new feature: easier configurations
+-new feature: can show last connections closed
+-new feature: automatic redirection on first access, to ease configuration
+-new: now include freeRADIUS config examples
+-new: now include MySQL database dump
+-new: now include hotspotlogin.php with and without popup
+-new: now include Chillispot configuration example

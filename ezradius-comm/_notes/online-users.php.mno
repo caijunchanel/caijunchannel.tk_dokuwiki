@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsUserOnline" value="name:UserName;datatype:string,name:AcctInputOctets;datatype:int,name:AcctOutputOctets;datatype:int,name:AcctStartTime;datatype:datetime,name:AcctSessionTime;datatype:int,name:FramedIPAddress;datatype:string,name:RadAcctId;datatype:int" />
+</info>

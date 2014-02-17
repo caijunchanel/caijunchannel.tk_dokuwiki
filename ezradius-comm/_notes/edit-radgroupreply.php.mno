@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsRadgroupreply" value="name:id;datatype:int,name:GroupName;datatype:string,name:Attribute;datatype:string,name:op;datatype:string,name:Value;datatype:string" />
+</info>

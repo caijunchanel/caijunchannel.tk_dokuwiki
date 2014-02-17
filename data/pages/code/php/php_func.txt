@@ -1,0 +1,30 @@
+=====PHP常用功能函数实例=====
+展示PHP的配置信息
+    
+    echo phpinfo();
+    
+    
+打印系统时间
+    echo date('Y-m-s H:i:s');
+
+修改php.ini设置系统时间
+   修改php.ini文件中的设置,找到[date]下的"date.timezone="选项，
+   将该项修改成"date.timezone=Asia/shanghai",再重启Apache服务。
+
+打印当前执行的PHP文件路径和文件名
+   echo __FILE__;
+   
+单引号和双引号的区别
+   最大的区别是，双引号中包含的变量会自动转换为实际数值， 单引号则按普通字符输出。
+
+动态输出Javascript代码
+   使用<<<mark.....mark;
+  <?php
+  $str=<<<mark
+  <script language="javascript" type="text/javacript">
+         alert("欢迎");
+  </script>
+  mark;
+  echo $str;
+  ?>
+
